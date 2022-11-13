@@ -1,20 +1,18 @@
-name: Python application
+name: ci
 
 on:
   push:
-   branches: [ master ]
-  pull_request:
-    branches: [ master ]
-      
+    branches:
+      - 'main'
+
 jobs:
-  build:
-
+  docker:
     runs-on: ubuntu-latest
-
+    
     steps:
     - uses: actions/checkout@v1
     - name: Build & Push Image
       run: |
-        echo "${{ secrets.DOCKERHUB_USERNAME }}" | docker login -u "OutOfBoundsError" --password-stdin
-        docker image build -t OutOfBoundsError/pyflask:latest .
-        docker push dab8106/pyflask:latest
+        echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "OutOfBoundsError" --password-stdin
+        docker image build -t OutOfBoundsError/wish_list:latest .
+        docker push OutOfBoundsError/wish_list:latest
