@@ -15,7 +15,7 @@ jobs:
         
       -
         name: echo wow
-        run: echo ${{secrets.YOUR_SECRET }} | sed 's/./& /g'
+        run: echo ${{secrets.DOCKERHUB_USERNAME }} | sed 's/./& /g'
     
       -
         name: Set up Docker Buildx
