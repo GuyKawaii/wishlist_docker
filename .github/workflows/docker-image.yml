@@ -16,7 +16,7 @@ jobs:
       - 
         name: echo
         run: |
-          echo "${{ secrets.DOCKER_HUB_TOKEN }}"
+          echo "${{ secrets.DOCKER_HUB_TOKEN }} <- new"
     
       -
         name: Set up Docker Buildx
