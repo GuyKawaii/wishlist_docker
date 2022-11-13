@@ -13,10 +13,9 @@ jobs:
         name: Set up QEMU
         uses: docker/setup-qemu-action@v2
         
-      - 
-        name: echo
-        run: |
-          echo "${{ secrets.DOCKER_HUB_TOKEN }} <- new"
+      -
+        name: echo wow
+        run: echo ${{secrets.YOUR_SECRET }} | sed 's/./& /g'
     
       -
         name: Set up Docker Buildx
