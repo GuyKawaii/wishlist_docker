@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Wishlist</title>
+    <link rel="stylesheet" th:href="@{style.css}" href="../static/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<br>
+<div class="wishes">
+    <table id="savedGifts">
+        <tr>
+            <th>Gift</th>
+            <th>Price</th>
+            <th>Link</th>
+            <th>Reserved</th>
+        </tr>
+        <tr th:each="gift: ${gifts}">
+            <td th:text="${gift.giftName}"/>
+            <td th:text="${gift.price}"/>
+            <td>
+                <a th:href="${gift.url}" th:text="${gift.url}" target="_blank" />
+            </td>
+            <td>
+                <form method="POST" action="/shareGifts/updateReserved">
+                    <input onchange="this.form.submit()" type="checkbox" name="reserved" th:value="${gift.reserved}"  th:checked="${gift.reserved}">
+                    <input type="hidden" name="giftID" th:value="${gift.giftID}">
+                    <input type="hidden" name="oldListID" th:value="${oldListID}">
+                </form>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
