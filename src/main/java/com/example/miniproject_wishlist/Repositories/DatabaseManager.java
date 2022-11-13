@@ -18,9 +18,9 @@ public class DatabaseManager {
         if(conn != null){
             return conn;
         }
-        hostname = "jdbc:mysql://alberto.mysql.database.azure.com :3306/wishlist";
-        username = "Workswell";
-        password = "Th1sBetterW0rk!";
+        hostname = System.getenv("url_daniel_azure");
+        username = System.getenv("username_daniel_azure");
+        password = System.getenv("password_daniel_azure");
         try {
             conn = DriverManager.getConnection(hostname, username, password);
         } catch (SQLException e) {
