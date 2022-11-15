@@ -2,12 +2,13 @@ package com.example.miniproject_wishlist.Repositories;
 
 import com.example.miniproject_wishlist.model.Wishlist;
 import com.example.miniproject_wishlist.model.User;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class WishlistRepositoryTest {
-    private WishlistRepository wishlistRepository = new WishlistRepository();
+    private static WishlistRepository wishlistRepository = new WishlistRepository();
 
     @Test
     public void testCreateAndDeleteUser() {
@@ -21,7 +22,7 @@ class WishlistRepositoryTest {
 
         // # add user #
         wishlistRepository.createUser(expected);
-        User actual =  wishlistRepository.getUser(testEmail);
+        User actual = wishlistRepository.getUser(testEmail);
 
         // recall of user
         assertEquals(expected.getEmail(), actual.getEmail());
@@ -32,7 +33,7 @@ class WishlistRepositoryTest {
         wishlistRepository.deleteUser(testEmail);
 
         // recall of removed user
-        User actualRemoved =  wishlistRepository.getUser(testEmail);
+        User actualRemoved = wishlistRepository.getUser(testEmail);
         assertNull(actualRemoved);
     }
 
@@ -45,7 +46,7 @@ class WishlistRepositoryTest {
 
         String testListName = "testGiftList";
         int testListID = 1;
-        Wishlist expectedGiftList  = new Wishlist(testListID, testEmail, testListName);
+        Wishlist expectedGiftList = new Wishlist(testListID, testEmail, testListName);
 
 
         // ### reset database ###
@@ -66,7 +67,7 @@ class WishlistRepositoryTest {
         wishlistRepository.deleteWishlist(testListID);
 
         // recall of removed giftList
-        Wishlist actualRemoved =  wishlistRepository.getWishlist(testListID);
+        Wishlist actualRemoved = wishlistRepository.getWishlist(testListID);
         assertNull(actualRemoved);
     }
 
@@ -80,16 +81,10 @@ class WishlistRepositoryTest {
 
         String testListName = "testGiftList";
         int testListID = 1;
-        Wishlist expectedGiftList  = new Wishlist(testListID, testEmail, testListName);
-
-
-
-
+        Wishlist expectedGiftList = new Wishlist(testListID, testEmail, testListName);
 
 
     }
-
-
 
 
 }

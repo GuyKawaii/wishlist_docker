@@ -8,6 +8,7 @@ class MiniprojectWishlistApplicationTests {
 
     @Test
     void contextLoads() {
+
     }
 
 }

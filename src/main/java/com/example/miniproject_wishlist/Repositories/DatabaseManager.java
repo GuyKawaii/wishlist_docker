@@ -18,6 +18,8 @@ public class DatabaseManager {
         if(conn != null){
             return conn;
         }
+
+        // add env variables to -maven runner under File menu AND Run configurations used
         hostname = System.getenv("url_daniel_azure");
         username = System.getenv("username_daniel_azure");
         password = System.getenv("password_daniel_azure");
