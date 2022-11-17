@@ -2,9 +2,10 @@
   <configuration default="false" name="MiniprojectWishlistApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
     <option name="ACTIVE_PROFILES" />
     <envs>
-      <env name="username_daniel_azure" value="kea" />
-      <env name="url_daniel_azure" value="jdbc:mysql://keaserver.mysql.database.azure.com:3306/wishlist" />
-      <env name="password_daniel_azure" value="pnQvY%d6GgMo" />
+      <env name="azure_password" value="pnQvY%d6GgMo" />
+      <env name="azure_url" value="jdbc:mysql://keaserver.mysql.database.azure.com:3306/wishlist" />
+      <env name="azure_username" value="kea" />
+      <env name="driver" value="com.mysql.cj.jdbc.Driver" />
     </envs>
     <module name="wishlist_docker" />
     <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.miniproject_wishlist.MiniprojectWishlistApplication" />
